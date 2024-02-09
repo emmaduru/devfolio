@@ -5,14 +5,13 @@
 <div class="col-lg-6 col-md-8 mx-auto">
     <h3>Log In</h3>
 
-    <form action="" method="post">
+    <form action="" method="post" class="mb-4">
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-primary">Log In</button>
+        <small>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></small>
     </form>
-    <small>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></small>
-    <h4>Test Credentials</h4>
-    <p><strong>Username:</strong> julia</p>
-    <p><strong>Password:</strong> 7V=;f;Pj5=nGdmv</p>
+    <h6>Test Credentials</h6>
+    <p><strong>Username:</strong> julia <br><strong>Password:</strong> 7V=;f;Pj5=nGdmv</p>
 </div>
 {% endblock %}
