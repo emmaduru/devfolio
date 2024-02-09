@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block home %}
+<div class="showcase m-4 text-center" style="padding: 30px 0 70px 0;">
+    <h1 class="text-center">Build your dev portfolio</h1>
+    <p class="text-center">Everything you need to create high quality dev portolio</p>
+    <a href="{% url 'dashboard' %}" class="btn btn-primary">Build your dev portfolio</a>
+</div>
+<div class="middle bg-primary text-white" style="padding: 70px 0 70px 0;">
+    <div class="row container mx-auto">
+        <div class="col-lg-6 col-md-4">
+            <div style="height:250px">
+                <img class="img-fluid" src="media/images/web-img.png" alt="" style="height: 100%">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-8 d-flex align-items-center">
+            <div>
+                <h2 class="text-center">Publish your dev portfolio website in minutes</h2>
+                <p class="text-center">Showcase your projects in a beautiful and recruiter-friendly postfolio website</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lower m-4 text-center" style="padding: 70px 0 70px 0;">
+    <h2 class="text-center">Get inspired by other projects</h2>
+    <a href="{% url 'project_list' %}" class="btn btn-primary">Browse Projects</a>
+</div>
+{% endblock %}

@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-lg-6 col-md-8">
+    <h2>Explore projects for inspiration</h2>
+</div>
+<div class="nav-pills">
+    <!-- Pills navs -->
+<ul class="nav nav-pills mb-3" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a
+        data-mdb-pill-init
+        class="nav-link active"
+        id="ex1-tab-all"
+        href="#ex1-pills-all"
+        role="tab"
+        aria-controls="ex1-pills-all"
+        aria-selected="true"
+        >All</a
+      >
+    </li>
+    <li class="nav-item" role="presentation">
+      <a
+        data-mdb-pill-init
+        class="nav-link"
+        id="ex1-tab-frontend"
+        href="#ex1-pills-frontend"
+        role="tab"
+        aria-controls="ex1-pills-frontend"
+        aria-selected="false"
+        >Frontend</a
+      >
+    </li>
+    <li class="nav-item" role="presentation">
+      <a
+        data-mdb-pill-init
+        class="nav-link"
+        id="ex1-tab-backend"
+        href="#ex1-pills-backend"
+        role="tab"
+        aria-controls="ex1-pills-backend"
+        aria-selected="false"
+        >Backend</a
+      >
+    </li>
+    <li class="nav-item" role="presentation">
+      <a
+        data-mdb-pill-init
+        class="nav-link"
+        id="ex1-tab-fullstack"
+        href="#ex1-pills-fullstack"
+        role="tab"
+        aria-controls="ex1-pills-fullstack"
+        aria-selected="false"
+        >Fullstack</a
+      >
+
+      <li class="nav-item" role="presentation">
+        <a
+          data-mdb-pill-init
+          class="nav-link"
+          id="ex1-tab-mobile"
+          href="#ex1-pills-mobile"
+          role="tab"
+          aria-controls="ex1-pills-mobile"
+          aria-selected="false"
+          >Mobile</a
+        >
+      </li>
+      <li class="nav-item" role="presentation">
+        <a
+          data-mdb-pill-init
+          class="nav-link"
+          id="ex1-tab-game"
+          href="#ex1-pills-game"
+          role="tab"
+          aria-controls="ex1-pills-game"
+          aria-selected="false"
+          >Game</a
+        >
+      </li>
+      <li class="nav-item" role="presentation">
+        <a
+          data-mdb-pill-init
+          class="nav-link"
+          id="ex1-tab-data"
+          href="#ex1-pills-data"
+          role="tab"
+          aria-controls="ex1-pills-data"
+          aria-selected="false"
+          >Data Analytics</a
+        >
+      </li>  
+    </ul>
+  <!-- Pills navs -->
+  
+  <!-- Pills content -->
+  <div class="tab-content" id="ex1-content">
+    <div
+      class="tab-pane fade show active"
+      id="ex1-pills-all"
+      role="tabpanel"
+      aria-labelledby="ex1-tab-all"
+    >
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 my-2">
+                    <div class="card p-0">
+                        <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                            <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                            <a href="{% url 'project_detail' project.slug %}">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.name }}</h5>
+                            <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                                <span class="small me-3">{{ project.user.full_name }}</span>
+                            </div>
+                            <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="ex1-pills-frontend" role="tabpanel" aria-labelledby="ex1-tab-frontend">
+        <div class="row">
+        {% for project in frontend_projects %}
+        <div class="col-lg-4 col-md-6 my-2">
+                <div class="card p-0">
+                    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                        <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                        <a href="{% url 'project_detail' project.slug %}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                            <span class="small me-3">{{ project.user.full_name }}</span>
+                        </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="ex1-pills-backend" role="tabpanel" aria-labelledby="ex1-tab-backend">
+        <div class="row">
+        {% for project in backend_projects %}
+        <div class="col-lg-4 col-md-6 my-2">
+                <div class="card p-0">
+                    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                        <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                        <a href="{% url 'project_detail' project.slug %}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                            <span class="small me-3">{{ project.user.full_name }}</span>
+                        </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="ex1-pills-fullstack" role="tabpanel" aria-labelledby="ex1-tab-fullstack">
+      <div class="row">
+        {% for project in fullstack_projects %}
+      <div class="col-lg-4 col-md-6 my-2">
+              <div class="card p-0">
+                  <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                      <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                      <a href="{% url 'project_detail' project.slug %}">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">{{ project.name }}</h5>
+                      <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                      <div class="d-flex align-items-center">
+                          <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                          <span class="small me-3">{{ project.user.full_name }}</span>
+                      </div>
+                      <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                  </div>
+              </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="tab-pane fade" id="ex1-pills-mobile" role="tabpanel" aria-labelledby="ex1-tab-mobile">
+        <div class="row">
+        {% for project in mobile_projects %}
+        <div class="col-lg-4 col-md-6 my-2">
+                <div class="card p-0">
+                    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                        <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                        <a href="{% url 'project_detail' project.slug %}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                            <span class="small me-3">{{ project.user.full_name }}</span>
+                        </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="ex1-pills-game" role="tabpanel" aria-labelledby="ex1-tab-game">
+        <div class="row">
+        {% for project in game_projects %}
+        <div class="col-lg-4 col-md-6 my-2">
+                <div class="card p-0">
+                    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                        <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                        <a href="{% url 'project_detail' project.slug %}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                            <span class="small me-3">{{ project.user.full_name }}</span>
+                        </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="ex1-pills-data" role="tabpanel" aria-labelledby="ex1-tab-data">
+        <div class="row">
+        {% for project in data_projects %}
+        <div class="col-lg-4 col-md-6 my-2">
+                <div class="card p-0">
+                    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                        <img src="{{ project.thumbnail.url }}" class="img-fluid card-img-top" style="height: 180px; width: 100%; object-fit: cover;"/>
+                        <a href="{% url 'project_detail' project.slug %}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description|truncatechars:50 }}</p>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ project.user.photo.url }}" alt="{{ project.user.username }}" class="rounded-circle me-3" style="object-fit: cover; height: 35px; width: 35px">
+                            <span class="small me-3">{{ project.user.full_name }}</span>
+                        </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="stretched-link"></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+  </div>
+  <!-- Pills content -->
+</div>
+{% endblock content %}
