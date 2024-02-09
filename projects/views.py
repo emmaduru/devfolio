@@ -37,11 +37,11 @@ class ProjectDetailView(DetailView):
 class ProjectListView(ListView):
     model = Project
     template_name = "projects/list.html"
-    context_object_name = "projects"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         projects = self.get_queryset().order_by("-id")
+        context["projects"] = projects
         context["frontend_projects"] = projects.filter(type="Frontend")
         context["backend_projects"] = projects.filter(type="Backend")
         context["fullstack_projects"] = projects.filter(type="Fullstack")
