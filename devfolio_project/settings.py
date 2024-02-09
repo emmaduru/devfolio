@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG") or False
 
 ALLOWED_HOSTS = [os.getenv("ALLOWED_HOST"), "127.0.0.1"]
 CSRF_TRUSTED_ORIGINS = [os.getenv("CSRF_HOST"), "http://127.0.0.1/"]
