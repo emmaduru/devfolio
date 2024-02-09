@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [os.getenv("ALLOWED_HOST"), "127.0.0.1"]
-CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1/"]
+CSRF_TRUSTED_ORIGINS = [os.getenv("CSRF_HOST"), "http://127.0.0.1/"]
 
 CSRF_FAILURE_VIEW = "users.views.csrf_failure"
 
