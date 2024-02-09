@@ -78,7 +78,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ project.name }}</h5>
+                                    <h5 class="card-title">{{ project.name|truncatechars:24 }}</h5>
                                     <p class="card-text">{{ project.description|truncatechars:30 }}</p>
                                     <a class="text-primary me-1 small" href="{% url 'project_edit' project.slug %}" data-mdb-ripple-init>Edit</a>
 
