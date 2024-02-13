@@ -5,45 +5,45 @@
 <div class="row my-4">
     <div class="col-lg-4 col-md-5">
         <div class="bg-light rounded p-4">
-            {% if user.photo.url != "/media/default.png" %}
+            {% if profile.photo.url != "/media/default.png" %}
             <div class="photo col-8 m-0 p-0 ml-auto">
-                <img src="{{ user.photo.url }}" alt="{{ user.username }}" class="p-0 m-0 rounded-circle" style="object-fit:cover; width:150px; height:150px;">
+                <img src="{{ profile.photo.url }}" alt="{{ profile.username }}" class="p-0 m-0 rounded-circle" style="object-fit:cover; width:150px; height:150px;">
             </div>
             {% endif %}
             <div class="user-bio my-2">
-                {% if user.full_name %}
-                <h3>{{ user.full_name }}</h3>
+                {% if profile.full_name %}
+                <h3>{{ profile.full_name }}</h3>
                 {% endif %}
                 <p>
-                    {% if user.headline %}
-                        {{ user.headline }}
+                    {% if profile.headline %}
+                        {{ profile.headline }}
                     {% endif %}
-                    {% if user.location %}
+                    {% if profile.location %}
                         <br>
-                        <span class="text-muted text-small">Based in {{ user.location }}</span>
+                        <span class="text-muted text-small">Based in {{ profile.location }}</span>
                     {% endif %}
                 </p>
-                {% if user.about %}
+                {% if profile.about %}
                 <h6>About</h6>
-                <p>{{ user.about }}</p>
+                <p>{{ profile.about }}</p>
                 {% endif %}
             </div>
             
             <div class="user-links my-2">
-                {% if user.github %}
-                <a style="font-size: 24px;" href="{{ user.github }}"><i class="fa-brands me-3 fa-github"></i></a>
+                {% if profile.github %}
+                <a style="font-size: 24px;" href="{{ profile.github }}"><i class="fa-brands me-3 fa-github"></i></a>
                 {% endif %}
                 
-                {% if user.kaggle %}
-                <a style="font-size: 24px;" href="{{ user.kaggle }}"><i class="fa-brands me-3 fa-kaggle"></i></a>
+                {% if profile.kaggle %}
+                <a style="font-size: 24px;" href="{{ profile.kaggle }}"><i class="fa-brands me-3 fa-kaggle"></i></a>
                 {% endif %}
                 
-                {% if user.linkedin %}
-                <a style="font-size: 24px;" href="{{ user.linkedin }}"><i class="fa-brands me-3 fa-linkedin"></i></a>
+                {% if profile.linkedin %}
+                <a style="font-size: 24px;" href="{{ profile.linkedin }}"><i class="fa-brands me-3 fa-linkedin"></i></a>
                 {% endif %}
                 
-                {% if user.medium %}
-                <a style="font-size: 24px;" href="{{ user.medium }}"><i class="fa-brands me-3 fa-medium"></i></a>
+                {% if profile.medium %}
+                <a style="font-size: 24px;" href="{{ profile.medium }}"><i class="fa-brands me-3 fa-medium"></i></a>
                 {% endif %}
             </div>
     

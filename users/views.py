@@ -47,7 +47,7 @@ class DashboardView(LoginRequiredMixin, TemplateView):
 class PortfolioView(DetailView):
     model = CustomUser
     template_name = "profile/portfolio.html"
-    context_object_name = "user"
+    context_object_name = "profile"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
