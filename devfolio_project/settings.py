@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "education.apps.EducationConfig",
     'cloudinary_storage',
     "cloudinary",
+    'whitenoise.runserver_nostatic',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -145,6 +146,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE ='whitenoise.storage.StaticFilesStorage'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv("CLOUDINARY_CLOUD_NAME"),
