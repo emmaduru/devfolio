@@ -16,6 +16,7 @@ requests==2.31.0
 six==1.16.0
 sqlparse==0.4.4
 typing_extensions==4.9.0
-tzdata==2023.4
+tzdata==2024.1
 urllib3==2.2.0
 validators==0.22.0
+whitenoise==6.6.0
