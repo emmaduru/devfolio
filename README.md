@@ -2,8 +2,11 @@
 Devfolio is a website that enables developers create online portfolios within minutes.
 
 ![](static/images/home.PNG)
+<br>
 ![](static/images/portfolio-page.PNG)
+<br>
 ![](static/images/projects.PNG)
+<br>
 
 **Here are the technologies I used:**
 - Python
